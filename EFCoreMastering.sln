@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreMastering1Basic", "EFCoreMastering1Basic\EFCoreMastering1Basic.csproj", "{633F9D05-C7C0-4F22-915D-6810DCA7E639}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreMastering2Relationship", "EFCoreMastering2Relationship\EFCoreMastering2Relationship.csproj", "{BC5DD2A3-89AA-4A3F-A326-38C11B146A85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreMastering1Basic", "EFCoreMastering1Basic\EFCoreMastering1Basic.csproj", "{4D897ED7-23BB-48FA-AAE1-98D8CB8D541A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,13 +10,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{633F9D05-C7C0-4F22-915D-6810DCA7E639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{633F9D05-C7C0-4F22-915D-6810DCA7E639}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{633F9D05-C7C0-4F22-915D-6810DCA7E639}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{633F9D05-C7C0-4F22-915D-6810DCA7E639}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BC5DD2A3-89AA-4A3F-A326-38C11B146A85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BC5DD2A3-89AA-4A3F-A326-38C11B146A85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC5DD2A3-89AA-4A3F-A326-38C11B146A85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC5DD2A3-89AA-4A3F-A326-38C11B146A85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D897ED7-23BB-48FA-AAE1-98D8CB8D541A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D897ED7-23BB-48FA-AAE1-98D8CB8D541A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D897ED7-23BB-48FA-AAE1-98D8CB8D541A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D897ED7-23BB-48FA-AAE1-98D8CB8D541A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
