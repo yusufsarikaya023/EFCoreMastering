@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCoreMastering2Relationship.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20240615163157_BookShadowForCategory")]
-    partial class BookShadowForCategory
+    [Migration("20240804112224_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,7 +53,11 @@ namespace EFCoreMastering2Relationship.Migrations
                     b.Property<int>("AuthorId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CategoryId")
+                    b.Property<string>("Barcode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("MainCategoryId")
                         .HasColumnType("int");
 
                     b.Property<int?>("SectionId")
@@ -67,7 +71,7 @@ namespace EFCoreMastering2Relationship.Migrations
 
                     b.HasIndex("AuthorId");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("MainCategoryId");
 
                     b.HasIndex("SectionId");
 
@@ -89,6 +93,86 @@ namespace EFCoreMastering2Relationship.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("EFCoreMastering2Relationship.Domain.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CustomerAddress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("OrderNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("EFCoreMastering2Relationship.Domain.OrderBasket", b =>
+                {
+                    b.Property<string>("OrderNumber")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Barcode")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderNumber", "Barcode");
+
+                    b.HasIndex("Barcode");
+
+                    b.ToTable("OrderBaskets");
+                });
+
+            modelBuilder.Entity("EFCoreMastering2Relationship.Domain.OrderComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Barcode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CommentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OrderNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderNumber", "Barcode");
+
+                    b.ToTable("OrderComments");
                 });
 
             modelBuilder.Entity("EFCoreMastering2Relationship.Domain.Section", b =>
@@ -119,9 +203,9 @@ namespace EFCoreMastering2Relationship.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("EFCoreMastering2Relationship.Domain.Category", "Category")
+                    b.HasOne("EFCoreMastering2Relationship.Domain.Category", "MainCategory")
                         .WithMany("Books")
-                        .HasForeignKey("CategoryId")
+                        .HasForeignKey("MainCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -131,9 +215,41 @@ namespace EFCoreMastering2Relationship.Migrations
 
                     b.Navigation("Author");
 
-                    b.Navigation("Category");
+                    b.Navigation("MainCategory");
 
                     b.Navigation("Section");
+                });
+
+            modelBuilder.Entity("EFCoreMastering2Relationship.Domain.OrderBasket", b =>
+                {
+                    b.HasOne("EFCoreMastering2Relationship.Domain.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("Barcode")
+                        .HasPrincipalKey("Barcode")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EFCoreMastering2Relationship.Domain.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderNumber")
+                        .HasPrincipalKey("OrderNumber")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Book");
+
+                    b.Navigation("Order");
+                });
+
+            modelBuilder.Entity("EFCoreMastering2Relationship.Domain.OrderComment", b =>
+                {
+                    b.HasOne("EFCoreMastering2Relationship.Domain.OrderBasket", "OrderBasket")
+                        .WithMany()
+                        .HasForeignKey("OrderNumber", "Barcode")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("OrderBasket");
                 });
 
             modelBuilder.Entity("EFCoreMastering2Relationship.Domain.Author", b =>

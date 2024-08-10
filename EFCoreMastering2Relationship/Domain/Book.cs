@@ -4,6 +4,7 @@ public class Book
 {
     public int Id { get; set; }
     public string Title { get; set; } = null!;
+    public string Barcode { get; set; } = null!;
     
     public Category MainCategory { get; set; } = null!;
 
