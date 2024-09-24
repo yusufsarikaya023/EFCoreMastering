@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreMastering2Relationshi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreMastering1Basic", "EFCoreMastering1Basic\EFCoreMastering1Basic.csproj", "{4D897ED7-23BB-48FA-AAE1-98D8CB8D541A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreMastering3SelfReferencing", "EFCoreMastering3SelfReferencing\EFCoreMastering3SelfReferencing.csproj", "{C58C4236-6456-44F3-B039-CF8AF7D3E9CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreMastering4OneToOneRelationship", "EFCoreMastering4OneToOneRelationship\EFCoreMastering4OneToOneRelationship.csproj", "{83C0352D-9EA1-470A-971D-B0F9377A3D5A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{4D897ED7-23BB-48FA-AAE1-98D8CB8D541A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D897ED7-23BB-48FA-AAE1-98D8CB8D541A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D897ED7-23BB-48FA-AAE1-98D8CB8D541A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C58C4236-6456-44F3-B039-CF8AF7D3E9CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C58C4236-6456-44F3-B039-CF8AF7D3E9CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C58C4236-6456-44F3-B039-CF8AF7D3E9CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C58C4236-6456-44F3-B039-CF8AF7D3E9CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83C0352D-9EA1-470A-971D-B0F9377A3D5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83C0352D-9EA1-470A-971D-B0F9377A3D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83C0352D-9EA1-470A-971D-B0F9377A3D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83C0352D-9EA1-470A-971D-B0F9377A3D5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,6 @@
+@EFCoreMastering3SelfReferencing_HostAddress = http://localhost:5214
+
+GET {{EFCoreMastering3SelfReferencing_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
