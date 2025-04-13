@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreMastering3SelfReferen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreMastering4OneToOneRelationship", "EFCoreMastering4OneToOneRelationship\EFCoreMastering4OneToOneRelationship.csproj", "{83C0352D-9EA1-470A-971D-B0F9377A3D5A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreMasteringMapping", "EFCoreMasteringMapping\EFCoreMasteringMapping.csproj", "{01E40CA9-6210-45A0-9719-EC5E34465958}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{83C0352D-9EA1-470A-971D-B0F9377A3D5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83C0352D-9EA1-470A-971D-B0F9377A3D5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83C0352D-9EA1-470A-971D-B0F9377A3D5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01E40CA9-6210-45A0-9719-EC5E34465958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01E40CA9-6210-45A0-9719-EC5E34465958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01E40CA9-6210-45A0-9719-EC5E34465958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01E40CA9-6210-45A0-9719-EC5E34465958}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

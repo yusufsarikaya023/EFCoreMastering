@@ -22,7 +22,7 @@ public class Context : DbContext
             .HasOne(x => x.Brand)
             .WithOne(x => x.Image)
             .HasForeignKey<BrandImage>(x => x.BrandId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .OnDelete(DeleteBehavior.Cascade);
 
         base.OnModelCreating(modelBuilder);
     }
